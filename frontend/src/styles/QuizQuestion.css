@@ -1,0 +1,38 @@
+/* src/styles/QuizQuestion.css */
+.quiz-question-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .question-header {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .question-text {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .option-button {
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .option-button:hover {
+    background-color: #e0e0e0;
+  }
