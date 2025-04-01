@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../styles/QuizQuestion.css';
 
 const QuizQuestion =({
     question,
