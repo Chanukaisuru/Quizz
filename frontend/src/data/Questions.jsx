@@ -1,4 +1,4 @@
-export const quizQuestions = [
+export const Questions = [
     {
       id: 11,
       question: "What is the correct order of structure in Google Ads campaigns?",
