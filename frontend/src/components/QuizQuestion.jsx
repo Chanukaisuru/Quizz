@@ -11,7 +11,7 @@ const QuizQuestion =({
     return(
         <div className='quiz-question-container'>
             <div className='question-header'>
-                <h2>Question {currentQuestionIndex + 1} of {totalquestion}</h2>
+                <h2>Question {currentQuestionIndex + 1} of {totalQuestions}</h2>
             </div>
             <div className='question-text'>
                 <p>{question}</p>

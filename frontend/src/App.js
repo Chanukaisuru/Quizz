@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import QuizQuestion from './components/QuizQuestion';
 import Timer from './components/Timer';
-import { quizQuestions } from './data/quizQuestions';
-import './styles/App.css';
+import { Questions } from './data/Questions';
+import './App.css';
 
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -15,7 +15,7 @@ function App() {
     setScore(prevScore => prevScore + points);
 
     // Move to next question
-    if (currentQuestionIndex < quizQuestions.length - 1) {
+    if (currentQuestionIndex < Questions.length - 1) {
       setCurrentQuestionIndex(prevIndex => prevIndex + 1);
     } else {
       // Quiz is completed
@@ -29,7 +29,7 @@ function App() {
   };
 
   const calculateSkillsScore = () => {
-    const maxPossibleScore = quizQuestions.length * 5;
+    const maxPossibleScore = Questions.length * 5;
     return Math.round((score / maxPossibleScore) * 100);
   };
 
@@ -60,11 +60,11 @@ function App() {
         onTimeUp={handleTimeUp} 
       />
       <QuizQuestion 
-        question={quizQuestions[currentQuestionIndex].question}
-        options={quizQuestions[currentQuestionIndex].options}
+        question={Questions[currentQuestionIndex].question}
+        options={Questions[currentQuestionIndex].options}
         onAnswerSelect={handleAnswerSelect}
         currentQuestionIndex={currentQuestionIndex}
-        totalQuestions={quizQuestions.length}
+        totalQuestions={Questions.length}
       />
     </div>
   );
