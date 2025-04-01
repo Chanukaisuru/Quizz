@@ -1,7 +1,7 @@
 export const Questions = [
     {
       id: 11,
-      question: "What is the correct order of structure in Google Ads campaigns?",
+      question: "1. What is the correct order of structure in Google Ads campaigns?",
       options: [
         { 
           text: "1. Campaigns, 2. Adsets, 3. Ads", 
@@ -23,7 +23,7 @@ export const Questions = [
     },
     {
       id: 12,
-      question: "What is the latest character limit for Google Text Ad headlines?",
+      question: "2. What is the latest character limit for Google Text Ad headlines?",
       options: [
         { 
           text: "One headline of 25 characters", 
