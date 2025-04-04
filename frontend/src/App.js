@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="app-container">
       <Timer 
-        duration={600}  // 10 minutes = 600 seconds
+        duration={60}  // 10 minutes = 600 seconds
         onTimeUp={handleTimeUp} 
       />
       <QuizQuestion 
