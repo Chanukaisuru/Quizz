@@ -13,14 +13,18 @@ function App() {
   const handleAnswerSelect = (points) => {
     // Add points to score
     setScore(prevScore => prevScore + points);
+  };
 
+  const handleNextQuestion = () => {
     // Move to next question
     if (currentQuestionIndex < Questions.length - 1) {
       setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-    } else {
-      // Quiz is completed
-      setQuizCompleted(true);
     }
+  };
+
+  const handleSubmitQuiz = () => {
+    // Quiz is completed
+    setQuizCompleted(true);
   };
 
   const handleTimeUp = () => {
@@ -65,6 +69,8 @@ function App() {
         onAnswerSelect={handleAnswerSelect}
         currentQuestionIndex={currentQuestionIndex}
         totalQuestions={Questions.length}
+        onNextQuestion={handleNextQuestion}
+        onSubmitQuiz={handleSubmitQuiz}
       />
     </div>
   );
