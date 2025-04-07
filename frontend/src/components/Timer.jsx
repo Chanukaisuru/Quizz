@@ -4,18 +4,21 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import '../styles/Timer.css';
 
-function Timer({ duration = 60 }) { // Added duration prop with default value
+function Timer({ duration = 60 , onTimeUp}) { // Added duration prop with default value
   const [secondsLeft, setSecondsLeft] = useState(duration);
 
   useEffect(() => {
-    if (secondsLeft <= 0) return;
+    if (secondsLeft <= 0) {
+      onTimeUp(); // Call the callback when time reaches 0
+      return;
+    }
 
     const timer = setInterval(() => {
       setSecondsLeft(prev => prev - 1);
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [secondsLeft]);
+  }, [secondsLeft , onTimeUp]);
 
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
