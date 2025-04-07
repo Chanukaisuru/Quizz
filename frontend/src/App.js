@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import QuizQuestion from './components/QuizQuestion';
 import Timer from './components/Timer';
@@ -8,31 +7,39 @@ import './App.css';
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [quizStatus, setQuizStatus] = useState('active'); // 'active', 'timeout', 'completed'
+  const [hasCompletedEarly, setHasCompletedEarly] = useState(false);
 
   const handleAnswerSelect = (points) => {
-    // Add points to score
     setScore(prevScore => prevScore + points);
   };
 
   const handleNextQuestion = () => {
-    // Move to next question
     if (currentQuestionIndex < Questions.length - 1) {
       setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+    } else {
+      setHasCompletedEarly(true);
+      setQuizStatus('completed');
     }
   };
 
   const handleSubmitQuiz = () => {
-    // Quiz is completed
-    setQuizCompleted(true);
+    setHasCompletedEarly(true);
+    setQuizStatus('completed');
   };
 
   const handleTimeUp = () => {
-    // Automatically complete the quiz when time is up
-    setQuizCompleted(true);
+    setQuizStatus('timeout');
+  };
+
+  const handleShowResults = () => {
+    setQuizStatus('completed');
   };
 
   const calculateSkillsScore = () => {
+    const answeredQuestions = hasCompletedEarly 
+      ? Questions.length 
+      : currentQuestionIndex + 1;
     const maxPossibleScore = Questions.length * 5;
     return Math.round((score / maxPossibleScore) * 100);
   };
@@ -47,7 +54,31 @@ function App() {
     return "Digital Marketing Rock Star";
   };
 
-  if (quizCompleted) {
+  if (quizStatus === 'timeout') {
+    return (
+      <div className="timeup-message">
+        <h2>Sorry! Time's up.</h2>
+        <p>Time allocated for this test is over.</p>
+        <button onClick={handleShowResults} className="action-button">
+          Go Forward
+        </button>
+      </div>
+    );
+  }
+
+  if (quizStatus === 'completed' && hasCompletedEarly) {
+    return (
+      <div className="completion-message">
+        <h2>Well done! You managed to complete the test on time.</h2>
+        <p>Now proceed forward to see your results</p>
+        <button onClick={handleShowResults} className="action-button">
+          Go Forward
+        </button>
+      </div>
+    );
+  }
+
+  if (quizStatus === 'completed') {
     return (
       <div className="result-page">
         <h1>Your Result</h1>

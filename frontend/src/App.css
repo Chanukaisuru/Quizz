@@ -22,3 +22,62 @@
   color: #4a4a4a;
   margin-top: 20px;
 }
+
+/* src/App.css */
+.completion-message,
+.timeup-message {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.completion-message h2 {
+  color: #4CAF50;
+}
+
+.timeup-message h2 {
+  color: #f44336;
+}
+
+.action-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.action-button:hover {
+  background-color: #0b7dda;
+}
+
+/* src/App.css */
+.timeup-message {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ffebee;
+}
+
+.timeup-message h2 {
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.timeup-message p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
