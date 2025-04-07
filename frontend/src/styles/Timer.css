@@ -2,7 +2,7 @@
 .timer-container {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 150px;
   width: 80px;
   height: 80px;
   z-index: 1000;
@@ -11,7 +11,7 @@
 /* For larger screens */
 @media (min-width: 768px) {
   .timer-container {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 }
