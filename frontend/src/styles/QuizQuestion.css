@@ -1,38 +1,87 @@
 /* src/styles/QuizQuestion.css */
 .quiz-question-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .question-header {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  .question-text {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-  }
-  
-  .answer-options {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .option-button {
-    padding: 10px 15px;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .option-button:hover {
-    background-color: #e0e0e0;
-  }
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-header {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.question-text {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.option-button {
+  padding: 12px 15px;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.option-button:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+.option-button.selected {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.next-button, .submit-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.next-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.next-button:hover {
+  background-color: #3e8e41;
+}
+
+.submit-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #0b7dda;
+}
