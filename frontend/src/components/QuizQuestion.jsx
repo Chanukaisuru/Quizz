@@ -1,3 +1,4 @@
+//src/components/QuizQuestion.jsx
 import React, { useState } from 'react';
 import '../styles/QuizQuestion.css';
 
